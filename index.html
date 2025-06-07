@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Gas Agent System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <div class="topnav">
+    <h2>Gas Booking Portal</h2>
+    <button onclick="showLogin()">User Login</button>
+    <button onclick="showAdminLogin()">Admin Login</button>
+  </div>
+
+  <!-- USER LOGIN -->
+  <div class="container" id="userLoginPage">
+    <h2>📱 User Login</h2>
+    <input type="tel" id="userMobile" placeholder="Enter Mobile Number" />
+    <button onclick="sendUserOTP()">Send OTP</button>
+  </div>
+
+  <div class="container hidden" id="userOTPPage">
+    <h2>Enter OTP</h2>
+    <input type="text" id="userOTPInput" />
+    <button onclick="verifyUserOTP()">Verify OTP</button>
+  </div>
+
+  <!-- USER HOME -->
+  <div class="container hidden" id="userHome">
+    <h2>🏠 Welcome, User</h2>
+    <button onclick="showBookingForm()">🚀 Book Cylinder</button>
+    <button onclick="showHistory()">📜 Booking History</button>
+    <button onclick="requestExtraCylinder()">🛢️ Request Extra Cylinder</button>
+    <div class="success hidden" id="bookingConfirm">✅ Booking Confirmed!</div>
+  </div>
+
+  <!-- USER BOOKING -->
+  <div class="container hidden" id="bookingFormPage">
+    <h3>🚀 Book Cylinder</h3>
+    <input type="text" id="gasType" placeholder="Gas Type (e.g., LPG)" />
+    <input type="date" id="bookingDate" />
+    <button onclick="submitBooking()">Submit Booking</button>
+    <button onclick="backToHome()">Back</button>
+  </div>
+
+  <div class="container hidden" id="historyPage">
+    <h3>📜 Booking History</h3>
+    <div id="historyList"></div>
+    <button onclick="backToHome()">Back</button>
+  </div>
+
+  <!-- ADMIN LOGIN -->
+  <div class="container hidden" id="adminLoginPage">
+    <h2>👨‍💼 Admin Login</h2>
+    <input type="text" id="adminUsername" placeholder="Username" />
+    <input type="password" id="adminPassword" placeholder="Password" />
+    <button onclick="validateAdmin()">Next</button>
+  </div>
+
+  <div class="container hidden" id="adminOTPPage">
+    <h2>Enter Admin OTP</h2>
+    <input type="text" id="adminOTPInput" />
+    <button onclick="verifyAdminOTP()">Verify OTP</button>
+  </div>
+
+  <!-- ADMIN HOME -->
+  <div class="container hidden" id="adminHomePage">
+    <h2>👨‍💼 Admin Dashboard</h2>
+    <button onclick="viewAllBookings()">📋 All Bookings</button>
+    <button onclick="viewExtraRequests()">🛢️ Extra Cylinder Requests</button>
+    <button onclick="viewBookingStatus()">📦 Booking Status</button>
+  </div>
+
+  <div class="container hidden" id="allBookingsPage">
+    <h3>📋 All Bookings</h3>
+    <div id="adminBookingList"></div>
+    <button onclick="backToAdmin()">Back</button>
+  </div>
+
+  <div class="container hidden" id="extraRequestsPage">
+    <h3>🛢️ Extra Cylinder Requests</h3>
+    <div id="adminExtraList"></div>
+    <button onclick="backToAdmin()">Back</button>
+  </div>
+
+  <div class="container hidden" id="statusPage">
+    <h3>📦 Booking Status</h3>
+    <div id="bookingStatusList"></div>
+    <button onclick="backToAdmin()">Back</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
